@@ -1,4 +1,4 @@
-package com.hskris.weathermvp.data.repository.api.models
+package com.hskris.weathermvp.data.repository.remote.models
 
 import com.google.gson.annotations.SerializedName
 

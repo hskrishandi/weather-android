@@ -1,4 +1,4 @@
-package com.hskris.weathermvp.data.repository.api
+package com.hskris.weathermvp.data.repository.remote.api
 
 import com.hskris.weathermvp.BuildConfig
 import retrofit2.Retrofit
