@@ -1,15 +1,22 @@
 package com.hskris.weathermvp.ui.forecast
 
+import android.app.Activity
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.hskris.weathermvp.R
 import com.hskris.weathermvp.data.models.CityForecast
 import com.hskris.weathermvp.types.DayNightType
+import com.hskris.weathermvp.ui.city.CityActivity
 import com.hskris.weathermvp.utils.*
 import kotlinx.android.synthetic.main.activity_forecast.*
 
 class ForecastActivity : AppCompatActivity(), ForecastContract.View {
+
+    companion object {
+        const val CHOOSE_CITY = 1
+    }
 
     private val forecastAdapter = ForecastAdapter(emptyList())
     private val presenter = ForecastPresenter(this)
@@ -25,8 +32,24 @@ class ForecastActivity : AppCompatActivity(), ForecastContract.View {
             adapter = forecastAdapter
         }
 
+        textViewChooseCity.setOnClickListener {
+            val intent = Intent(this, CityActivity::class.java)
+            startActivityForResult(intent, CHOOSE_CITY)
+        }
+
         presenter.onStart()
 
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if(requestCode == CHOOSE_CITY){
+            if (resultCode == Activity.RESULT_OK) {
+                val cityId = data!!.getIntExtra(CityActivity.CITY_KEY, -1)
+                presenter.fetchForecast(cityId)
+            }
+        }
     }
 
     override fun setWeatherDisplay(cityForecast: CityForecast) {

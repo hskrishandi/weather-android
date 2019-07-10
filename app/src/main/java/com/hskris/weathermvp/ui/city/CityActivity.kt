@@ -9,6 +9,10 @@ import kotlinx.android.synthetic.main.activity_city.*
 
 class CityActivity : AppCompatActivity(), CityContract.View {
 
+    companion object {
+        const val CITY_KEY = "CITY_KEY"
+    }
+
     private val cityAdapter = CityAdapter(emptyList())
     private val presenter = CityPresenter(this)
 
