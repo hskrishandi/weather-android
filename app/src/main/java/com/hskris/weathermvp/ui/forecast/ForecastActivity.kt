@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.hskris.weathermvp.R
 import com.hskris.weathermvp.data.models.CityForecast
 import com.hskris.weathermvp.types.DayNightType
+import com.hskris.weathermvp.utils.getFiveDaysForecast
 import kotlinx.android.synthetic.main.activity_forecast.*
 import java.util.*
 
@@ -58,7 +59,9 @@ class ForecastActivity : AppCompatActivity(), ForecastContract.View {
                 }
         }
 
-       forecastAdapter.updateForecast(forecasts)
+        val fiveDaysForecasts = getFiveDaysForecast(cityForecast)
+
+        forecastAdapter.updateForecast(fiveDaysForecasts)
 
     }
 
