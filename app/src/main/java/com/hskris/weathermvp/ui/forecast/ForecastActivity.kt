@@ -6,9 +6,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.hskris.weathermvp.R
 import com.hskris.weathermvp.data.models.CityForecast
 import com.hskris.weathermvp.types.DayNightType
-import com.hskris.weathermvp.utils.getFiveDaysForecast
+import com.hskris.weathermvp.utils.*
 import kotlinx.android.synthetic.main.activity_forecast.*
-import java.util.*
 
 class ForecastActivity : AppCompatActivity(), ForecastContract.View {
 
@@ -63,19 +62,5 @@ class ForecastActivity : AppCompatActivity(), ForecastContract.View {
 
         forecastAdapter.updateForecast(fiveDaysForecasts)
 
-    }
-
-    fun getDayNight(timezone: Long): DayNightType {
-        var unixtime = System.currentTimeMillis() / 1000L
-        unixtime += timezone
-
-        val calendar = Calendar.getInstance(TimeZone.getTimeZone("UTC"))
-        calendar.time = Date(unixtime*1000)
-        val hour = calendar.get(Calendar.HOUR_OF_DAY)
-
-        when(hour in 6..17) {
-            true -> return DayNightType.DAY
-            false -> return DayNightType.NIGHT
-        }
     }
 }
