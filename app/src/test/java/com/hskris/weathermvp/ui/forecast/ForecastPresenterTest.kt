@@ -13,13 +13,13 @@ class ForecastPresenterTest : Spek({
     given("forecast presenter"){
 
         val cityForecast = CityForecast(City(1642911, "Jakarta"))
-        val view: ForecastView = mock()
+        val view: ForecastContract.View = mock()
         val repo: CityForecastRepository = mock()
         val presenter = ForecastPresenter(view, repo)
 
-        on("starting"){
+        on("fetching forecast"){
 
-            presenter.onStart()
+            presenter.fetchForecast(1642911)
 
             val listenerCaptor = argumentCaptor<CityForecastRepository.ResponseListener>()
 

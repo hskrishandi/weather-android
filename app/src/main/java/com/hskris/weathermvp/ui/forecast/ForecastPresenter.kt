@@ -11,7 +11,11 @@ class ForecastPresenter (
 ) : ForecastContract.Presenter{
 
     override fun onStart(){
-        repository.fetchForecastByCityId(1642911, object: CityForecastRepository.ResponseListener {
+        fetchForecast(1642911)
+    }
+
+    fun fetchForecast(id: Int){
+        repository.fetchForecastByCityId(id, object: CityForecastRepository.ResponseListener {
             override fun onResponse(cityForecast: CityForecast) {
                 view.setWeatherDisplay(cityForecast)
             }
