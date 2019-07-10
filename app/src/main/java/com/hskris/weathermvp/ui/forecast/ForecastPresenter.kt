@@ -5,16 +5,12 @@ import com.hskris.weathermvp.data.repository.CityForecastRepository
 import com.hskris.weathermvp.data.repository.remote.CityForecastRemoteRepository
 import com.hskris.weathermvp.data.repository.remote.api.Api
 
-interface ForecastView {
-    fun setWeatherDisplay(cityForecast: CityForecast)
-}
-
-class ForecastPresenter(
-    private val view: ForecastView,
+class ForecastPresenter (
+    private val view: ForecastContract.View,
     private val repository: CityForecastRepository = CityForecastRemoteRepository(Api.getInstance())
-) {
+) : ForecastContract.Presenter{
 
-    fun onStart(){
+    override fun onStart(){
         repository.fetchForecastByCityId(1642911, object: CityForecastRepository.ResponseListener {
             override fun onResponse(cityForecast: CityForecast) {
                 view.setWeatherDisplay(cityForecast)
