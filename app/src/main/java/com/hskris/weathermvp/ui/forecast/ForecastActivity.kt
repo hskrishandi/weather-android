@@ -11,6 +11,8 @@ import com.hskris.weathermvp.types.DayNightType
 import com.hskris.weathermvp.ui.city.CityActivity
 import com.hskris.weathermvp.utils.*
 import kotlinx.android.synthetic.main.activity_forecast.*
+import org.koin.android.ext.android.inject
+import org.koin.core.parameter.parametersOf
 
 class ForecastActivity : AppCompatActivity(), ForecastContract.View {
 
@@ -19,7 +21,7 @@ class ForecastActivity : AppCompatActivity(), ForecastContract.View {
     }
 
     private val forecastAdapter = ForecastAdapter(emptyList())
-    private val presenter = ForecastPresenter(this)
+    private val presenter: ForecastContract.Presenter by inject { parametersOf(this) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
