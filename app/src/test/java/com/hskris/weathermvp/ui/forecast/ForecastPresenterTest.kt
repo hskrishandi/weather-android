@@ -2,7 +2,7 @@ package com.hskris.weathermvp.ui.forecast
 
 import com.hskris.weathermvp.data.models.City
 import com.hskris.weathermvp.data.models.CityForecast
-import com.hskris.weathermvp.data.repository.CityForecastRepository
+import com.hskris.weathermvp.ui.UseCase
 import com.nhaarman.mockitokotlin2.*
 import org.jetbrains.spek.api.Spek
 import org.jetbrains.spek.api.dsl.given
@@ -14,19 +14,20 @@ class ForecastPresenterTest : Spek({
 
         val cityForecast = CityForecast(City(1642911, "Jakarta"))
         val view: ForecastContract.View = mock()
-        val repo: CityForecastRepository = mock()
-        val presenter = ForecastPresenter(view, repo)
+        val getForecastMock: UseCase<Int, CityForecast> = mock()
+
+        val presenter = ForecastPresenter(getForecastMock, view)
+
 
         on("fetching forecast"){
 
             presenter.fetchForecast(1642911)
-
-            val listenerCaptor = argumentCaptor<CityForecastRepository.ResponseListener>()
+            val callbackCaptor = argumentCaptor<UseCase.UseCaseCallback<CityForecast>>()
 
             it("fetches from repo and sets weather display"){
 
-                verify(repo).fetchForecastByCityId(any(), listenerCaptor.capture())
-                listenerCaptor.firstValue.onResponse(cityForecast)
+                verify(getForecastMock).execute(any(), callbackCaptor.capture())
+                callbackCaptor.firstValue.onSuccess(cityForecast)
                 verify(view).setWeatherDisplay(cityForecast)
             }
         }
