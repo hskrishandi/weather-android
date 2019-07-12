@@ -35,7 +35,7 @@ class ForecastAdapter (var items: List<Forecast>) : RecyclerView.Adapter<Forecas
         val item = items[position]
 
         val date = item.date
-        calendar.setTime(date)
+        calendar.time = date
         holder.day.text = calendar.getDisplayName(Calendar.DAY_OF_WEEK, Calendar.LONG, Locale.US)?.toString()
 
         val temp = item.temp.toInt().toString() + " C"

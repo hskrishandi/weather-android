@@ -67,7 +67,7 @@ class ForecastActivity : AppCompatActivity(), ForecastContract.View {
             DayNightType.NIGHT -> forecastLayout.setBackgroundResource(R.drawable.night)
         }
 
-        textViewBigTemp.text = currentForecast.temp.toInt().toString()
+        textViewBigTemp.text = "${currentForecast.temp.toInt()}"
         textViewCity.text = textCity
         textViewDescription.text = currentForecast.description
 

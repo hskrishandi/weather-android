@@ -27,8 +27,8 @@ fun getDayNight(timezone: Long): DayNightType {
     calendar.time = Date(unixtime*1000)
     val hour = calendar.get(Calendar.HOUR_OF_DAY)
 
-    when(hour in 6..17) {
-        true -> return DayNightType.DAY
-        false -> return DayNightType.NIGHT
+    return when(hour in 6..17) {
+        true -> DayNightType.DAY
+        false -> DayNightType.NIGHT
     }
 }
