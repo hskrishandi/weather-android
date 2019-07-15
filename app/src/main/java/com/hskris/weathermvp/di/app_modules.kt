@@ -12,7 +12,7 @@ import org.koin.dsl.module
 
 val weatherAppModule = module {
     single<CityForecastRepository> { CityForecastRemoteRepository(Api.getInstance())}
-    single<UseCase<Int, CityForecast>> { GetForecast(get()) }
+    single<UseCase<GetForecast.RequestValues, CityForecast>> { GetForecast(get()) }
     factory<ForecastContract.Presenter> { (view: ForecastContract.View) -> ForecastPresenter(get(), view)}
 
 }

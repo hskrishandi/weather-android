@@ -3,16 +3,18 @@ package com.hskris.weathermvp.ui.forecast.domain.usecase
 import com.hskris.weathermvp.data.models.CityForecast
 import com.hskris.weathermvp.data.repository.CityForecastRepository
 import com.hskris.weathermvp.ui.UseCase
+import com.hskris.weathermvp.ui.city.domain.usecase.GetCity
 
-class GetForecast(private val repository: CityForecastRepository) : UseCase<Int, CityForecast> {
+class GetForecast(private val getCity: UseCase<GetCity.RequestValues, CityForecast>, private val repository: CityForecastRepository) : UseCase<GetForecast.RequestValues, CityForecast> {
 
-    override fun execute(requestValues: Int, callback: UseCase.UseCaseCallback<CityForecast>) {
-
-        repository.fetchForecastByCityId(requestValues, object: CityForecastRepository.ResponseListener {
+    override fun run(requestValues: RequestValues, callback: UseCase.UseCaseCallback<CityForecast>) {
+        repository.fetchForecastByCityId(requestValues.id, object: CityForecastRepository.ResponseListener {
             override fun onResponse(response: CityForecast) {
                 callback.onSuccess(response)
             }
         })
     }
+
+    data class RequestValues(var id: Int) : UseCase.RequestValues
 
 }
