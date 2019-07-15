@@ -17,7 +17,7 @@ class GetForecastTest : Spek({
         val repo: CityForecastRepository = mock()
         val getForecast = GetForecast(repo)
         on("execution"){
-            getForecast.execute(1642911, object: UseCase.UseCaseCallback<CityForecast> {
+            getForecast.run(GetForecast.RequestValues(234342), object: UseCase.UseCaseCallback<CityForecast> {
                 override fun onSuccess(response: CityForecast) {
                 }
             })
