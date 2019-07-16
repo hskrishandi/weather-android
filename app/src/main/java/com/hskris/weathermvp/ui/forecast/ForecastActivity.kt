@@ -46,11 +46,9 @@ class ForecastActivity : AppCompatActivity(), ForecastContract.View {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
-        if(requestCode == CHOOSE_CITY){
-            if (resultCode == Activity.RESULT_OK) {
-                val cityId = data!!.getIntExtra(CityActivity.CITY_KEY, -1)
-                presenter.fetchForecast(cityId)
-            }
+        if(requestCode == CHOOSE_CITY && resultCode == Activity.RESULT_OK){
+            val cityId = data!!.getIntExtra(CityActivity.CITY_KEY, -1)
+            presenter.fetchForecast(cityId)
         }
     }
 
