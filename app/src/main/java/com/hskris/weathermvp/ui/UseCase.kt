@@ -1,8 +1,8 @@
 package com.hskris.weathermvp.ui
 
-interface UseCase<P : UseCase.RequestValues, R> {
+interface UseCase<R> {
 
-    fun run(requestValues: P, callback: UseCaseCallback<R>)
+    fun run(requestValues: RequestValues, callback: UseCaseCallback<R>)
 
     interface RequestValues
 

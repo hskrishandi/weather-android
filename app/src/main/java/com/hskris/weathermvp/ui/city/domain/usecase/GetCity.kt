@@ -3,8 +3,8 @@ package com.hskris.weathermvp.ui.city.domain.usecase
 import com.hskris.weathermvp.data.models.City
 import com.hskris.weathermvp.ui.UseCase
 
-class GetCity : UseCase<GetCity.RequestValues, List<City>> {
-    override fun run(requestValues: RequestValues, callback: UseCase.UseCaseCallback<List<City>>) {
+class GetCity : UseCase<List<City>> {
+    override fun run(requestValues: UseCase.RequestValues, callback: UseCase.UseCaseCallback<List<City>>) {
         callback.onSuccess(cityItems)
     }
 
