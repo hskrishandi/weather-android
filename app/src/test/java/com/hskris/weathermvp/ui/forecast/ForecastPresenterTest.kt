@@ -1,9 +1,9 @@
 package com.hskris.weathermvp.ui.forecast
 
-import com.hskris.weathermvp.data.models.City
-import com.hskris.weathermvp.data.models.CityForecast
-import com.hskris.weathermvp.ui.UseCase
-import com.hskris.weathermvp.ui.forecast.domain.usecase.GetForecast
+import com.hskris.weathermvp.domain.models.City
+import com.hskris.weathermvp.domain.models.CityForecast
+import com.hskris.weathermvp.domain.UseCase
+import com.hskris.weathermvp.domain.GetForecast
 import com.nhaarman.mockitokotlin2.*
 import org.jetbrains.spek.api.Spek
 import org.jetbrains.spek.api.dsl.given
@@ -13,7 +13,12 @@ import org.jetbrains.spek.api.dsl.on
 class ForecastPresenterTest : Spek({
     given("forecast presenter"){
 
-        val cityForecast = CityForecast(City(1642911, "Jakarta"))
+        val cityForecast = CityForecast(
+            City(
+                1642911,
+                "Jakarta"
+            )
+        )
         val view: ForecastContract.View = mock()
         val getForecastMock: GetForecast = mock()
 

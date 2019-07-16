@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.hskris.weathermvp.R
-import com.hskris.weathermvp.data.models.City
+import com.hskris.weathermvp.domain.models.City
 
 class CityAdapter(var items: List<City>) : RecyclerView.Adapter<CityAdapter.CityItem>(){
 

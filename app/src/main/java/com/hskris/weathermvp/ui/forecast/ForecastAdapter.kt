@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.hskris.weathermvp.R
-import com.hskris.weathermvp.data.models.Forecast
+import com.hskris.weathermvp.domain.models.Forecast
 import java.util.Calendar
 import java.util.Locale
 

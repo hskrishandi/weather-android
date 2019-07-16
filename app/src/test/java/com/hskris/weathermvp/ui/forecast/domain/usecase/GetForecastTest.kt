@@ -1,8 +1,9 @@
 package com.hskris.weathermvp.ui.forecast.domain.usecase
 
-import com.hskris.weathermvp.data.models.CityForecast
+import com.hskris.weathermvp.domain.models.CityForecast
 import com.hskris.weathermvp.data.repository.CityForecastRepository
-import com.hskris.weathermvp.ui.UseCase
+import com.hskris.weathermvp.domain.GetForecast
+import com.hskris.weathermvp.domain.UseCase
 import com.nhaarman.mockitokotlin2.any
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.verify

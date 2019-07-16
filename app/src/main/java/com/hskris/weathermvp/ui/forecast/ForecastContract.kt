@@ -1,6 +1,6 @@
 package com.hskris.weathermvp.ui.forecast
 
-import com.hskris.weathermvp.data.models.CityForecast
+import com.hskris.weathermvp.domain.models.CityForecast
 
 interface ForecastContract {
 

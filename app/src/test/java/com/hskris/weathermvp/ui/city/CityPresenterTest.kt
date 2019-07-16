@@ -1,11 +1,8 @@
 package com.hskris.weathermvp.ui.city
 
-import com.hskris.weathermvp.data.models.City
-import com.hskris.weathermvp.data.models.CityForecast
-import com.hskris.weathermvp.data.repository.CityForecastRepository
-import com.hskris.weathermvp.ui.UseCase
-import com.hskris.weathermvp.ui.city.domain.usecase.GetCity
-import com.hskris.weathermvp.ui.forecast.ForecastPresenter
+import com.hskris.weathermvp.domain.models.City
+import com.hskris.weathermvp.domain.UseCase
+import com.hskris.weathermvp.domain.GetCity
 import com.nhaarman.mockitokotlin2.any
 import com.nhaarman.mockitokotlin2.argumentCaptor
 import com.nhaarman.mockitokotlin2.mock
@@ -14,7 +11,6 @@ import org.jetbrains.spek.api.Spek
 import org.jetbrains.spek.api.dsl.given
 import org.jetbrains.spek.api.dsl.it
 import org.jetbrains.spek.api.dsl.on
-import org.junit.Assert.assertEquals
 
 class CityPresenterTest : Spek({
     given("city presenter"){

@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.hskris.weathermvp.R
-import com.hskris.weathermvp.data.models.City
+import com.hskris.weathermvp.domain.models.City
 import kotlinx.android.synthetic.main.activity_city.*
 import org.koin.android.ext.android.inject
 import org.koin.core.parameter.parametersOf

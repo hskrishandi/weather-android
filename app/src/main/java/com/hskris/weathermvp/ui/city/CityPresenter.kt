@@ -1,8 +1,8 @@
 package com.hskris.weathermvp.ui.city
 
-import com.hskris.weathermvp.data.models.City
-import com.hskris.weathermvp.ui.UseCase
-import com.hskris.weathermvp.ui.city.domain.usecase.GetCity
+import com.hskris.weathermvp.domain.models.City
+import com.hskris.weathermvp.domain.UseCase
+import com.hskris.weathermvp.domain.GetCity
 
 class CityPresenter(private val getCity: GetCity, private val view: CityContract.View): CityContract.Presenter {
 

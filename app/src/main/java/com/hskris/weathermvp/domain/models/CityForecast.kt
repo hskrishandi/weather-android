@@ -1,4 +1,4 @@
-package com.hskris.weathermvp.data.models
+package com.hskris.weathermvp.domain.models
 
 class CityForecast(val city: City) {
 

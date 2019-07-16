@@ -1,4 +1,4 @@
-package com.hskris.weathermvp.ui
+package com.hskris.weathermvp.domain
 
 interface UseCase<R> {
 

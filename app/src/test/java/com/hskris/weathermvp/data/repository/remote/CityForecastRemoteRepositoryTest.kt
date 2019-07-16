@@ -1,6 +1,6 @@
 package com.hskris.weathermvp.data.repository.remote
 
-import com.hskris.weathermvp.data.models.CityForecast
+import com.hskris.weathermvp.domain.models.CityForecast
 import com.hskris.weathermvp.data.repository.CityForecastRepository
 import com.hskris.weathermvp.data.repository.remote.api.ApiService
 import com.hskris.weathermvp.data.repository.remote.models.CityForecastResponse

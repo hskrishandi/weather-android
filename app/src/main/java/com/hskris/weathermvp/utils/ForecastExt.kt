@@ -1,7 +1,7 @@
 package com.hskris.weathermvp.utils
 
-import com.hskris.weathermvp.data.models.CityForecast
-import com.hskris.weathermvp.data.models.Forecast
+import com.hskris.weathermvp.domain.models.CityForecast
+import com.hskris.weathermvp.domain.models.Forecast
 import com.hskris.weathermvp.types.DayNightType
 import java.util.*
 

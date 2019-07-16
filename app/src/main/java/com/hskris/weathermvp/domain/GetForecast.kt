@@ -1,11 +1,10 @@
-package com.hskris.weathermvp.ui.forecast.domain.usecase
+package com.hskris.weathermvp.domain
 
-import com.hskris.weathermvp.data.models.City
-import com.hskris.weathermvp.data.models.CityForecast
-import com.hskris.weathermvp.data.models.Forecast
+import com.hskris.weathermvp.domain.models.City
+import com.hskris.weathermvp.domain.models.CityForecast
+import com.hskris.weathermvp.domain.models.Forecast
 import com.hskris.weathermvp.data.repository.CityForecastRepository
 import com.hskris.weathermvp.data.repository.remote.models.CityForecastResponse
-import com.hskris.weathermvp.ui.UseCase
 import java.util.*
 
 class GetForecast(private val repository: CityForecastRepository) : UseCase<CityForecast> {
@@ -25,7 +24,7 @@ class GetForecast(private val repository: CityForecastRepository) : UseCase<City
     private fun parseResponseToModel(response: CityForecastResponse): CityForecast {
 
         val cityResponse = response.city
-        val city = City (
+        val city = City(
             cityResponse.id,
             cityResponse.name,
             cityResponse.country,
@@ -42,7 +41,15 @@ class GetForecast(private val repository: CityForecastRepository) : UseCase<City
             val weather = forecast.weather[0].main
             val desc = forecast.weather[0].description
 
-            cityForecast.addForecasts(Forecast(Date(date * 1000), temp, humidity, weather, desc))
+            cityForecast.addForecasts(
+                Forecast(
+                    Date(date * 1000),
+                    temp,
+                    humidity,
+                    weather,
+                    desc
+                )
+            )
         }
 
         return cityForecast

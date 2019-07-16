@@ -1,5 +1,8 @@
 package com.hskris.weathermvp.data.models
 
+import com.hskris.weathermvp.domain.models.City
+import com.hskris.weathermvp.domain.models.CityForecast
+import com.hskris.weathermvp.domain.models.Forecast
 import org.jetbrains.spek.api.Spek
 import org.jetbrains.spek.api.dsl.given
 import org.jetbrains.spek.api.dsl.it
@@ -9,7 +12,8 @@ import java.util.Date
 
 class CityForecastTest : Spek({
     given("CityForecast") {
-        val cityForecast = CityForecast(City(1, "Jakarta"))
+        val cityForecast =
+            CityForecast(City(1, "Jakarta"))
         on("adding forecast") {
             val forecast = Forecast(Date(), 20.2, 10, "Rainy", "Light rain")
             cityForecast.addForecasts(forecast)

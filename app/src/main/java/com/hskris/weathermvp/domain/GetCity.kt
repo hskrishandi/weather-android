@@ -1,7 +1,6 @@
-package com.hskris.weathermvp.ui.city.domain.usecase
+package com.hskris.weathermvp.domain
 
-import com.hskris.weathermvp.data.models.City
-import com.hskris.weathermvp.ui.UseCase
+import com.hskris.weathermvp.domain.models.City
 
 class GetCity : UseCase<List<City>> {
     override fun run(requestValues: UseCase.RequestValues, callback: UseCase.UseCaseCallback<List<City>>) {

@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.hskris.weathermvp.R
-import com.hskris.weathermvp.data.models.CityForecast
+import com.hskris.weathermvp.domain.models.CityForecast
 import com.hskris.weathermvp.types.DayNightType
 import com.hskris.weathermvp.ui.city.CityActivity
 import com.hskris.weathermvp.utils.*

@@ -1,7 +1,8 @@
 package com.hskris.weathermvp.ui.city.domain.usecase
 
-import com.hskris.weathermvp.data.models.City
-import com.hskris.weathermvp.ui.UseCase
+import com.hskris.weathermvp.domain.models.City
+import com.hskris.weathermvp.domain.GetCity
+import com.hskris.weathermvp.domain.UseCase
 import org.jetbrains.spek.api.Spek
 import org.jetbrains.spek.api.dsl.given
 import org.jetbrains.spek.api.dsl.it
