@@ -10,7 +10,7 @@
         android:layout_height="wrap_content" android:id="@+id/linearLayout2">
 
     <TextView
-            android:text="Jakarta"
+            tools:text="Jakarta"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/textViewCityRow"

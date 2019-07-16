@@ -19,7 +19,7 @@
             app:layout_constraintTop_toBottomOf="@+id/imageViewWeather"
             android:background="@android:color/background_light"/>
     <TextView
-            android:text="Jakarta, ID"
+            tools:text="Jakarta, ID"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/textViewCity"
@@ -42,7 +42,7 @@
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintTop_toBottomOf="@+id/textViewBigTemp"/>
     <TextView
-            android:text="35"
+            tools:text="35"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/textViewBigTemp"
@@ -54,7 +54,7 @@
             app:layout_constraintHorizontal_bias="0.514"
             app:layout_constraintTop_toBottomOf="@+id/textViewDescription"/>
     <TextView
-            android:text="Clear Sky"
+            tools:text="Clear Sky"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/textViewDescription"
